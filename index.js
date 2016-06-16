@@ -181,7 +181,7 @@ function processDoc(opts) {
       base: fakeDest,
       cwd: fakeDest,
       path: setup.__file,
-      contents: new Buffer('NG_DOCS=' + JSON.stringify(setup, null, 2) + ';', 'utf8')
+      contents: new Buffer(JSON.stringify(setup, null, 2), 'utf8')
     }));
   }
 
@@ -319,7 +319,7 @@ function processDoc(opts) {
   });
 
   fstreams.push(copyTemplates(templates));
-  setup.__file = path.join(fakeDest, 'js/docs-setup.js');
+  setup.__file = path.join(fakeDest, 'js/docs-setup.json');
   setup.__options = options;
 
   reader.docs = [];

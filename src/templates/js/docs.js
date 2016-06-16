@@ -1,3 +1,12 @@
+NG_DOCS = {};
+$.ajax({
+  url: "js/docs-setup.json", 
+  async: false,
+  success: function(data) {
+    NG_DOCS = data;
+  }
+});
+
 var docsApp = {
   controller: {},
   directive: {},
