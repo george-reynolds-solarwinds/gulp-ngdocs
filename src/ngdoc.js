@@ -1113,6 +1113,7 @@ function metadata(docs){
       type: doc.ngdoc,
       moduleName: doc.moduleName,
       shortDescription: doc.shortDescription(),
+      parameters: doc.param,
       keywords: doc.keywords()
     });
   });
