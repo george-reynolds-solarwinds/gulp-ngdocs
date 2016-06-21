@@ -177,6 +177,15 @@ function processDoc(opts) {
     setup.startPage = options.startPage;
     setup.discussions = options.discussions;
     setup.scripts = options.scripts;
+    
+    setup.documents = {};
+    reader.docs.forEach(function(doc){
+      setup.documents[doc.section] = setup.documents[doc.section] || {};
+      setup.documents[doc.section][doc.id] = {
+        content: doc.html()
+      };
+    });
+    
     docsStream.push(new File({
       base: fakeDest,
       cwd: fakeDest,
