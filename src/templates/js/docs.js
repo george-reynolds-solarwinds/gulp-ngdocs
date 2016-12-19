@@ -131,7 +131,7 @@ docsApp.serviceFactory.loadedUrls = function($document) {
 
   urls.base = [];
   angular.forEach(NG_DOCS.scripts, function(script) {
-    var match = urls[script.replace(/(\-\d.*)?(\.min)?\.js$/, '.js')];
+    var match = urls[script.split('/').pop()];
     if (match) {
       urls.base.push(match);
     }
@@ -163,7 +163,7 @@ docsApp.serviceFactory.openPlunkr = function(templateMerge, formPostData, loaded
         '  <head>\n' +
         '{{scriptDeps}}' +
         '  </head>\n' +
-        '  <body>\n\n' +
+        '  <body class="xui">\n\n' +
         '{{indexContents}}\n\n' +
         '  </body>\n' +
         '</html>\n';
