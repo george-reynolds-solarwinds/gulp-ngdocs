@@ -163,7 +163,7 @@ docsApp.serviceFactory.openPlunkr = function(templateMerge, formPostData, loaded
         '  <head>\n' +
         '{{scriptDeps}}' +
         '  </head>\n' +
-        '  <body>\n\n' +
+        '  <body class="xui">\n\n' +
         '{{indexContents}}\n\n' +
         '  </body>\n' +
         '</html>\n';
