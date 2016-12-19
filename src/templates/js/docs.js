@@ -1,3 +1,12 @@
+NG_DOCS = {};
+$.ajax({
+  url: "js/docs-setup.json", 
+  async: false,
+  success: function(data) {
+    NG_DOCS = data;
+  }
+});
+
 var docsApp = {
   controller: {},
   directive: {},
@@ -122,7 +131,7 @@ docsApp.serviceFactory.loadedUrls = function($document) {
 
   urls.base = [];
   angular.forEach(NG_DOCS.scripts, function(script) {
-    var match = urls[script.replace(/(\-\d.*)?(\.min)?\.js$/, '.js')];
+    var match = urls[script.split('/').pop()];
     if (match) {
       urls.base.push(match);
     }
